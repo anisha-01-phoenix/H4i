@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">H4i</string>
+    <string name="google_map_key">AIzaSyDrJzjGcWMpH0xFP22vLV4FPd_E7u98O2Y</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="empty_field">Empty task</string>
 </resources>
