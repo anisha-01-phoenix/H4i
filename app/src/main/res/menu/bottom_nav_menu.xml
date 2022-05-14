@@ -13,12 +13,12 @@
 
     <item
         android:id="@+id/placeholder"
-        android:title="" />
+        android:title="UPLOAD SCAN" />
 
     <item
         android:id="@+id/notification"
         android:icon="@drawable/notification"
-        android:title="NOTIFICATIONS" />
+        android:title="REMINDERS" />
     <item
         android:id="@+id/doctor"
         android:icon="@drawable/doctor"

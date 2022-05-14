@@ -2,9 +2,10 @@ package com.example.h4i.ModelClass;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DoctorModel {
+public class DoctorModel implements Serializable {
 
     @SerializedName("name")
     public String name;
@@ -55,6 +56,17 @@ public class DoctorModel {
 
     public ArrayList<String> getSpecialist() {
         return specialist;
+    }
+
+    public DoctorModel() {
+    }
+
+    public DoctorModel(String name, String reg_no, String qualification, String place, ArrayList<String> specialist) {
+        this.name = name;
+        this.reg_no = reg_no;
+        this.qualification = qualification;
+        this.place = place;
+        this.specialist = specialist;
     }
 
     public void setSpecialist(ArrayList<String> specialist) {

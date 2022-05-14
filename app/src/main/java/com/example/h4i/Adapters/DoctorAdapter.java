@@ -1,6 +1,7 @@
 package com.example.h4i.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.h4i.Activity.DoctorActivity;
 import com.example.h4i.ModelClass.DoctorModel;
 import com.example.h4i.R;
 
@@ -39,8 +42,6 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.HospitalVi
     public void onBindViewHolder(@NonNull HospitalViewHolder holder, int position) {
         DoctorModel model = list.get(position);
         holder.name.setText(model.getName());
-        holder.reg_no.setText(model.getReg_no());
-        holder.qualification.setText(model.getQualification());
         holder.place.setText(model.getPlace());
         int s = model.getSpecialist().size();
         String sp = "";
@@ -48,6 +49,15 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.HospitalVi
             sp = sp + model.getSpecialist().get(i) + "  ";
         }
         holder.specialist.setText(sp);
+        holder.card.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(context, DoctorActivity.class);
+                intent.putExtra("Doctor Details", model);
+                context.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -91,15 +101,15 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.HospitalVi
 
 
     public class HospitalViewHolder extends RecyclerView.ViewHolder {
-        TextView name, reg_no, qualification, place, specialist;
+        TextView name, place, specialist;
+        CardView card;
 
         public HospitalViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.doctor_name);
-            reg_no = itemView.findViewById(R.id.doctor_reg_no);
-            qualification = itemView.findViewById(R.id.doctor_qualification);
             place = itemView.findViewById(R.id.doctor_place);
             specialist = itemView.findViewById(R.id.specialist);
+            card = itemView.findViewById(R.id.card);
 
         }
     }
