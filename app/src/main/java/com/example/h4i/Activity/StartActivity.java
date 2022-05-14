@@ -17,7 +17,7 @@ import com.example.h4i.Fragments.ReminderFragment;
 import com.example.h4i.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
 
     @Override
